@@ -4,7 +4,7 @@ Simplify your interactions with the [Flex Insights API](https://www.twilio.com/d
 
 
 ## How does this work?
-This creates a wrapper service around the Twilio Flex Insights API using Node.js. The complexity of interacting with the API will be handled by Twilio Serverless Functions, allowing for one final, secured endpoint to be used to return CSV data from Flex Insights. 
+This creates a wrapper service around the Twilio Flex Insights API using Node.js. The complexity of interacting with the API will be handled by Twilio Serverless Functions, allowing for one final, secured endpoint to be used. This endpoint will return CSV data from Flex Insights. 
 
 
 ## Prerequisites
