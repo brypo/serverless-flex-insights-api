@@ -3,7 +3,7 @@ const { httpRequest } = require(Runtime.getFunctions()['helpers/request'].path)
 
 
 // get the parameters for report export
-const setupReportExportConfig = async (ttoken, workspace_id, report_id, dateFilter) => {
+const getReportExportConfig = async (ttoken, workspace_id, report_id, dateFilter) => {
     return JSON.stringify({
         report_req: {
             report: `/gdc/md/${workspace_id}/obj/${report_id}`,
@@ -26,7 +26,7 @@ const setupReportExportConfig = async (ttoken, workspace_id, report_id, dateFilt
 // get the report export
 const getReportExport = async (ttoken, workspace_id, report_id, dateFilter) => {
     let export_uri = `https://analytics.ytica.com/gdc/app/projects/${workspace_id}/execute/raw`
-    let params = await setupReportExportConfig(ttoken, workspace_id, report_id, dateFilter)
+    let params = await getReportExportConfig(ttoken, workspace_id, report_id, dateFilter)
     let auth = { ttoken }
 
     let reportExport = await httpRequest("POST", export_uri, auth, params)
